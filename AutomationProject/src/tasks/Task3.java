@@ -6,6 +6,6 @@ public class Task3 {
 	@Test
 	public void task1()
 	{
-		System.out.println("Task1");
+		System.out.println("Task3");
 	}
 }
