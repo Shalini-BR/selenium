@@ -7,6 +7,6 @@ public class Task1CheckingAllLinks {
 	@Test
 	public void task1()
 	{
-		System.out.println("Task1");
+		System.out.println("Task1 main program");
 	}
 }
