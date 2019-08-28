@@ -26,13 +26,13 @@ public class DataBaseConnection {
 		        
 		        try (Connection connection = DriverManager.getConnection(connectionUrl);
 		        		 Statement statement = connection.createStatement();) {
-		            // Code here.
+		            
 		        	System.out.println("success");
 		        	  String selectSql = "SELECT TOP 5 * from BR_USER_PROFILE	";
 		              resultSet = statement.executeQuery(selectSql);
 		              
 		              while (resultSet.next()) {
-		                  System.out.println(resultSet.getString(2) );
+		                  System.out.println(resultSet.getString(1));
 		              }
 		        }
 		        // Handle any errors that may have occurred.
