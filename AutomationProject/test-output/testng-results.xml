@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2433" started-at="2019-08-28T05:57:22Z" finished-at="2019-08-28T05:57:24Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2433" started-at="2019-08-28T05:57:22Z" finished-at="2019-08-28T05:57:24Z">
+      <class name="tasks.DataBaseConnection">
+        <test-method status="PASS" signature="testdb()[pri:0, instance:tasks.DataBaseConnection@ea1a8d5]" name="testdb" duration-ms="2412" started-at="2019-08-28T05:57:22Z" finished-at="2019-08-28T05:57:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testdb -->
+      </class> <!-- tasks.DataBaseConnection -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
