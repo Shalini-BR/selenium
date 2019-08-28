@@ -3,6 +3,11 @@ package tasks;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Iterator;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -16,22 +21,53 @@ public class JSONSimpleReadingFromFileExample {
 		 
 		  try {
 		 
-		   Object obj = parser.parse(new FileReader("E:CountryJSONFile.json"));
+		   Object obj = parser.parse(new FileReader("E:Test.json"));
 		 
 		   JSONObject jsonObject = (JSONObject) obj;
 		 
-		   String nameOfCountry = (String) jsonObject.get("Name");
-		   System.out.println("Name Of Country: "+nameOfCountry);
+		   String servername = (String) jsonObject.get("servername");
+		   System.out.println("servername: "+servername);
 		 
-		   long population = (Long) jsonObject.get("Population");
-		   System.out.println("Population: "+population);
+		   String port = (String) jsonObject.get("port");
+		   System.out.println("servername: "+servername);
 		 
-		   System.out.println("States are :");
-		   JSONArray listOfStates = (JSONArray) jsonObject.get("States");
-		   Iterator iterator = listOfStates.iterator();
-		   while (iterator.hasNext()) {
-		    System.out.println(iterator.next());
-		   }
+		   String databasename = (String) jsonObject.get("databasename");
+		   System.out.println("databasename: "+databasename);
+		 
+		   String loginTimeout = (String) jsonObject.get("loginTimeout");
+		   System.out.println("loginTimeout: "+loginTimeout);
+		 
+		   String username = (String) jsonObject.get("username");
+		   System.out.println("username: "+username);
+		 
+		   String password = (String) jsonObject.get("password");
+		   System.out.println("password: "+password);
+		 
+		   String connectionUrl =
+	                "jdbc:sqlserver://"+servername+":"+port+";"
+	                        + "database="+databasename+";"
+	                        + "user="+username+";"
+	                        + "password="+password+";"
+	                        + "loginTimeout="+loginTimeout+";";
+
+	        ResultSet resultSet = null;
+	        
+	        try (Connection connection = DriverManager.getConnection(connectionUrl);
+	        		 Statement statement = connection.createStatement();) {
+	            
+	        	System.out.println("success");
+	        	  String selectSql = "SELECT TOP 5 * from Employee	";
+	              resultSet = statement.executeQuery(selectSql);
+	              
+	              while (resultSet.next()) {
+	                  System.out.println(resultSet.getString(1));
+	              }
+	        }
+	        // Handle any errors that may have occurred.
+	        catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	
 		 
 		  } catch (FileNotFoundException e) {
 		   e.printStackTrace();
