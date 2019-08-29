@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2251" started-at="2019-08-28T06:46:19Z" finished-at="2019-08-28T06:46:21Z">
+  <suite name="Default suite" duration-ms="23" started-at="2019-08-28T10:54:40Z" finished-at="2019-08-28T10:54:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2251" started-at="2019-08-28T06:46:19Z" finished-at="2019-08-28T06:46:21Z">
-      <class name="tasks.DbConnectionex">
-        <test-method status="PASS" signature="testdb()[pri:0, instance:tasks.DbConnectionex@ea1a8d5]" name="testdb" duration-ms="2232" started-at="2019-08-28T06:46:19Z" finished-at="2019-08-28T06:46:21Z">
+    <test name="Default test" duration-ms="23" started-at="2019-08-28T10:54:40Z" finished-at="2019-08-28T10:54:40Z">
+      <class name="tasks.Patternprinting">
+        <test-method status="PASS" signature="pattern()[pri:0, instance:tasks.Patternprinting@2bbf4b8b]" name="pattern" duration-ms="6" started-at="2019-08-28T10:54:40Z" finished-at="2019-08-28T10:54:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testdb -->
-      </class> <!-- tasks.DbConnectionex -->
+        </test-method> <!-- pattern -->
+      </class> <!-- tasks.Patternprinting -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
