@@ -27,7 +27,7 @@ public class DbConnectionex {
 	        		 Statement statement = connection.createStatement();) {
 	            
 	        	System.out.println("success");
-	        	  String selectSql ="SELECT TOP 5 * from Employee";
+	        	  String selectSql ="CREATE TABLE Student(Student_id INT NOT NULL,last_name VARCHAR(50) NOT NULL,first_name VARCHAR(50));";
 	              resultSet = statement.executeQuery(selectSql);
 	              
 	              while (resultSet.next()) {
